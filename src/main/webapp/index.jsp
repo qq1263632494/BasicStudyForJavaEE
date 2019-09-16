@@ -14,6 +14,7 @@
     <form action="/simple" method="post">
       <label for="msg">输入消息：</label>
       <input type="text" id="msg" name="msg"/>
+      <button type="submit">提交</button>
     </form>
   </body>
 </html>
