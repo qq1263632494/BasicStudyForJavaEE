@@ -6,10 +6,11 @@ plugins {
 group 'StudySpringMVCWithGradle'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.10
 
 repositories {
-    mavenCentral()
+    //替换为阿里云maven仓库
+    maven {url "http://maven.aliyun.com/nexus/content/groups/public/"}
 }
 
 dependencies {
@@ -27,4 +28,7 @@ dependencies {
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.28.0'
     // https://mvnrepository.com/artifact/org.springframework/spring-core
     compile group: 'org.springframework', name: 'spring-core', version: '5.1.9.RELEASE'
+    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api
+    compile group: 'org.apache.tomcat', name: 'tomcat-servlet-api', version: '8.5.45'
+
 }

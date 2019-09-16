@@ -8,9 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>简单主页</title>
   </head>
   <body>
-  $END$
+    <form action="/Gradle___StudySpringMVCWithGradle___untitled1_1_0_SNAPSHOT_war/simple" method="post">
+      <label for="msg">输入消息：</label>
+      <input type="text" id="msg" name="msg"/>
+    </form>
   </body>
 </html>

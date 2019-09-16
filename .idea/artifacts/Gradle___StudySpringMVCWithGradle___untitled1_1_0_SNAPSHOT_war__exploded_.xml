@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : StudySpringMVCWithGradle : untitled1-1.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/untitled1-1.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/untitled1-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="untitled1.main/web/Web Gradle : untitled1-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="untitled1.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.alibaba:fastjson:1.2.60" />
+          <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-servlet-api:8.5.45" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis:3.5.2" />
+          <element id="library" level="project" name="Gradle: org.xerial:sqlite-jdbc:3.28.0" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jcl:5.1.9.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
