@@ -11,7 +11,7 @@
     <title>简单主页</title>
   </head>
   <body>
-    <form action="/Gradle___StudySpringMVCWithGradle___untitled1_1_0_SNAPSHOT_war/simple" method="post">
+    <form action="/simple" method="post">
       <label for="msg">输入消息：</label>
       <input type="text" id="msg" name="msg"/>
     </form>
