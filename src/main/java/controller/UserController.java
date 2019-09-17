@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.IOException;
-
 @Controller
 public class UserController {
     private SqlSessionFactory factory;
@@ -24,7 +22,7 @@ public class UserController {
     @RequestMapping(value = "register")
     public ModelAndView register(@RequestParam(name = "name") String name, @RequestParam(name = "pass") String pass){
         ModelAndView mv = new ModelAndView();
-        try(SqlSession session = factory.openSession();){
+        try(SqlSession session = factory.openSession()){
             User user = new User();
             user.setName(name);
             user.setPass(pass);
