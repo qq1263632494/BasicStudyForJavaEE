@@ -24,17 +24,7 @@
         </div>
         <button type="submit" class="btn btn-primary">注册</button>
       </form>
-      <form action="${pageContext.request.contextPath}/register" method="post" class="form">
-        <div class="form-group">
-          <label for="user" class="form-label">账号：</label>
-          <input type="text" id="user" name="user" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label for="pass" class="form-label">密码：</label>
-          <input type="text" id="pass" name="pass" class="form-control"/>
-        </div>
-        <button type="submit" class="btn btn-primary">提交</button>
-      </form>
+      <a href="${pageContext.request.contextPath}/query.jsp">查询用户</a>
     </div>
   </body>
 </html>

@@ -4,4 +4,7 @@
     <insert id="save" parameterType="controller.User" useGeneratedKeys="true">
         INSERT INTO user_tb(id, name, pass) VALUES (#{id}, #{name}, #{pass})
     </insert>
+    <select id="query" parameterType="int" resultType="controller.User" useCache="true" statementType="PREPARED">
+        SELECT * FROM main.user_tb WHERE id = #{id}
+    </select>
 </mapper>
