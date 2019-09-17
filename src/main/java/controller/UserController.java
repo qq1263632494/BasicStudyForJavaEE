@@ -14,18 +14,22 @@ import java.io.IOException;
 @Controller
 public class UserController {
     private SqlSessionFactory factory;
+    public UserController(){
+        try{
+            this.factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     @RequestMapping(value = "register")
     public ModelAndView register(@RequestParam(name = "name") String name, @RequestParam(name = "pass") String pass){
         ModelAndView mv = new ModelAndView();
-        try{
-            SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
-            SqlSession session = factory.openSession();
+        try(SqlSession session = factory.openSession();){
             User user = new User();
             user.setName(name);
             user.setPass(pass);
             session.insert("mapper.save", user);
             session.commit();
-            session.close();
             mv.addObject("msg", "注册成功");
         }catch (Exception e){
             e.printStackTrace();
@@ -38,14 +42,6 @@ public class UserController {
     public ModelAndView lookup(@RequestParam(name = "id") Integer id){
         System.out.println("开始查询");
         ModelAndView mv = new ModelAndView();
-        try {
-            factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
-        }catch (Exception e){
-            e.printStackTrace();
-            mv.addObject("msg", "配置错误");
-            mv.setViewName("queryResult");
-            return mv;
-        }
         try(SqlSession session = factory.openSession()){
             User user = session.selectOne("mapper.query", id);
             System.out.println(user);
@@ -57,6 +53,29 @@ public class UserController {
             mv.addObject("msg", "查询失败");
         }
         mv.setViewName("queryResult");
+        return mv;
+    }
+    @RequestMapping(value = "update")
+    public ModelAndView updateUser(@RequestParam(name = "name") String name,
+                                   @RequestParam(name = "pass") String pass)
+    {
+        ModelAndView mv = new ModelAndView();
+        try(SqlSession session = factory.openSession()){
+            if(session.selectOne("mapper.queryByName", name)!=null){
+                User user = new User();
+                user.setName(name);
+                user.setPass(pass);
+                session.update("mapper.update", user);
+                session.commit();
+                mv.addObject("msg", "成功");
+            }else {
+                mv.addObject("msg", "用户不存在");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            mv.addObject("msg", "失败");
+        }
+        mv.setViewName("updateResult");
         return mv;
     }
 }

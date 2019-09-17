@@ -25,6 +25,7 @@
         <button type="submit" class="btn btn-primary">注册</button>
       </form>
       <a href="${pageContext.request.contextPath}/query.jsp">查询用户</a>
+      <a href="${pageContext.request.contextPath}/update.jsp">更改用户</a>
     </div>
   </body>
 </html>
