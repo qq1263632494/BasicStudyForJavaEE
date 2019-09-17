@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="container">
-        <form class="form" method="get" action="${pageContext.request.contextPath}/update">
+        <form class="form" method="get" action="${pageContext.request.contextPath}/delete">
             <div class="form-group">
                 <label for="name" class="control-label">输入账号：</label>
                 <input type="text" id="name" name="name" class="form-control">

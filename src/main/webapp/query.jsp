@@ -16,7 +16,7 @@
         <form class="form" method="get" action="${pageContext.request.contextPath}/lookup">
             <div class="form-group">
                 <label class="input-label" for="id">输入id</label>
-                <input type="text" class="form-control" id="id" name="id"/>
+                <input type="text" class="form-control" id="id" name="name"/>
             </div>
             <button class="btn btn-primary">开始查询</button>
         </form>

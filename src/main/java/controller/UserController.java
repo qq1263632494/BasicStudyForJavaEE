@@ -39,11 +39,11 @@ public class UserController {
         return mv;
     }
     @RequestMapping(value = "lookup")
-    public ModelAndView lookup(@RequestParam(name = "id") Integer id){
+    public ModelAndView lookup(@RequestParam(name = "name") String name){
         System.out.println("开始查询");
         ModelAndView mv = new ModelAndView();
         try(SqlSession session = factory.openSession()){
-            User user = session.selectOne("mapper.query", id);
+            User user = session.selectOne("mapper.queryByName", name);
             System.out.println(user);
             mv.addObject("msg", "查询成功");
             mv.addObject("name", user.getName());
@@ -76,6 +76,28 @@ public class UserController {
             mv.addObject("msg", "失败");
         }
         mv.setViewName("updateResult");
+        return mv;
+    }
+    @RequestMapping(value = "delete")
+    public ModelAndView deleteUser(@RequestParam(name = "name") String name,
+                                   @RequestParam(name = "pass") String pass)
+    {
+        ModelAndView mv = new ModelAndView();
+        try(SqlSession session = factory.openSession()){
+            if(session.selectOne("mapper.queryByName", name)!=null){
+                User user = new User();
+                user.setName(name);
+                user.setPass(pass);
+                session.delete("mapper.delete", user);
+                session.commit();
+                mv.addObject("msg", "删除成功");
+            }else {
+                mv.addObject("msg", "用户不存在");
+            }
+        }catch (Exception e){
+            mv.addObject("msg", "删除失败");
+        }
+        mv.setViewName("deleteResult");
         return mv;
     }
 }
