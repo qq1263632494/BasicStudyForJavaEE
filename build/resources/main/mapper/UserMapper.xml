@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper">
+    <insert id="save" parameterType="controller.User" useGeneratedKeys="true">
+        INSERT INTO user_tb(id, name, pass) VALUES (#{id}, #{name}, #{pass})
+    </insert>
+    <select id="query" parameterType="int" resultType="controller.User" useCache="true" statementType="PREPARED">
+        SELECT * FROM main.user_tb WHERE id = #{id}
+    </select>
+    <select id="queryByName" parameterType="String" resultType="controller.User">
+        SELECT * FROM user_tb WHERE name = #{name}
+    </select>
+    <update id="update" parameterType="controller.User">
+        UPDATE user_tb SET pass = #{pass} WHERE name = #{name}
+    </update>
+</mapper>
