@@ -5,7 +5,7 @@
   Time: 下午9:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
   <head>
     <title>简单主页</title>
@@ -25,7 +25,10 @@
         <button type="submit" class="btn btn-primary">注册</button>
       </form>
       <a href="${pageContext.request.contextPath}/query.jsp">查询用户</a>
+      <br>
       <a href="${pageContext.request.contextPath}/update.jsp">更改用户</a>
+      <br>
+      <a href="${pageContext.request.contextPath}/delete.jsp">删除用户</a>
     </div>
   </body>
 </html>
