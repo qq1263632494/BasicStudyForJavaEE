@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ValueConstants;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -108,6 +109,18 @@ public class UserController {
         mv.setViewName("selectMap");
         try(SqlSession session = factory.openSession()){
             mv.addObject("data", session.selectList("mapper.selectMap"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return mv;
+    }
+    @RequestMapping(value = "selectList")
+    public ModelAndView selectList(){
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("msg", "你好");
+        mv.setViewName("selectList");
+        try(SqlSession session = factory.openSession()){
+            mv.addObject("data", session.selectList("mapper.selectList"));
         }catch (Exception e){
             e.printStackTrace();
         }
