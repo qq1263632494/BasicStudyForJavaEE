@@ -16,4 +16,7 @@
     <delete id="delete" parameterType="controller.User">
         DELETE FROM user_tb WHERE name = #{name} AND pass = #{pass}
     </delete>
+    <select id="selectMap" resultType="map">
+        SELECT * FROM user_tb
+    </select>
 </mapper>

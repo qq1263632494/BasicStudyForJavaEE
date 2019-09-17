@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+import java.util.Map;
+
 @Controller
 public class UserController {
     private SqlSessionFactory factory;
@@ -96,6 +99,18 @@ public class UserController {
             mv.addObject("msg", "删除失败");
         }
         mv.setViewName("deleteResult");
+        return mv;
+    }
+    @RequestMapping(value = "selectMap")
+    public ModelAndView selectMap(){
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("msg", "你好");
+        mv.setViewName("selectMap");
+        try(SqlSession session = factory.openSession()){
+            mv.addObject("data", session.selectList("mapper.selectMap"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return mv;
     }
 }
