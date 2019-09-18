@@ -29,6 +29,10 @@
       <a href="${pageContext.request.contextPath}/update.jsp">更改用户</a>
       <br>
       <a href="${pageContext.request.contextPath}/delete.jsp">删除用户</a>
+      <br>
+      <a href="${pageContext.request.contextPath}/selectMap">简单测试</a>
+      <br>
+      <a href="${pageContext.request.contextPath}/selectList">简单测试2</a>
     </div>
   </body>
 </html>
