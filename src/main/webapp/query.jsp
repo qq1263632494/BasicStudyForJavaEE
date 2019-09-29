@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <head>
     <title>查询用户</title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
@@ -15,11 +15,10 @@
     <div class="container">
         <form class="form" method="get" action="${pageContext.request.contextPath}/lookup">
             <div class="form-group">
-                <label class="input-label" for="id">输入id</label>
+                <label class="input-label" for="id"><spring:message code="hint"/></label>
                 <input type="text" class="form-control" id="id" name="name"/>
             </div>
-            <button class="btn btn-primary">开始查询</button>
+            <button class="btn btn-primary"><spring:message code="startQuery"/></button>
         </form>
     </div>
 </body>
-</html>
