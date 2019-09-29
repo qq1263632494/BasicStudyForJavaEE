@@ -24,7 +24,7 @@
         </div>
         <button type="submit" class="btn btn-primary">注册</button>
       </form>
-      <a href="${pageContext.request.contextPath}/query">查询用户</a>
+      <a href="${pageContext.request.contextPath}/query?locale=zh_CN">查询用户</a>
       <br>
       <a href="${pageContext.request.contextPath}/updateView">更改用户</a>
       <br>
