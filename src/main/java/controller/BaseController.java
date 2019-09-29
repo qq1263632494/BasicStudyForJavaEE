@@ -1,0 +1,12 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+@Controller
+public class BaseController {
+    @RequestMapping(value = "/{action}")
+    public String doSomeThing(@PathVariable String action){
+        return action;
+    }
+}
