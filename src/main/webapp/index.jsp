@@ -26,9 +26,9 @@
       </form>
       <a href="${pageContext.request.contextPath}/query?locale=zh_CN">查询用户</a>
       <br>
-      <a href="${pageContext.request.contextPath}/updateView">更改用户</a>
+      <a href="${pageContext.request.contextPath}/updateView?locale=zh_CN">更改用户</a>
       <br>
-      <a href="${pageContext.request.contextPath}/deleteView">删除用户</a>
+      <a href="${pageContext.request.contextPath}/deleteView?locale=zh_CN">删除用户</a>
       <br>
       <a href="${pageContext.request.contextPath}/selectMap">简单测试</a>
       <br>
