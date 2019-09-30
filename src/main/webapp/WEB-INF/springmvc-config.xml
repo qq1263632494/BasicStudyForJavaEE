@@ -26,7 +26,8 @@
     </bean>
 
     <mvc:annotation-driven conversion-service="conversionService"/>
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <list>
                 <bean class="converters.DateConverter" p:datePattern="yyyy-MM-dd"/>
