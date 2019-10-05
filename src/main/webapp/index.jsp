@@ -37,6 +37,8 @@
       <a href="${pageContext.request.contextPath}/format?locale=zh_CN">格式化测试</a>
       <br>
       <a href="${pageContext.request.contextPath}/validation?locale=zh_CN">校验测试</a>
+      <br>
+      <a href="${pageContext.request.contextPath}/JSRValidator">JSR303校验测试</a>
     </div>
   </body>
 </html>

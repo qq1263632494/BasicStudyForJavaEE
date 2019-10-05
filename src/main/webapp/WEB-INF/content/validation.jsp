@@ -17,10 +17,12 @@
     <form:form cssClass="form" method="post" action="${pageContext.request.contextPath}/validationTest">
         <table>
             <tr>
+                <td>用户名：</td>
                 <td><form:input path="loginname"/></td>
                 <td><form:errors path="loginname"/></td>
             </tr>
             <tr>
+                <td>密码：</td>
                 <td><form:input path="password"/></td>
                 <td><form:errors path="password"/></td>
             </tr>
